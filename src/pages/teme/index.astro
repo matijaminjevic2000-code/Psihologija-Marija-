@@ -1,0 +1,226 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+
+const articles = (await getCollection('teme')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString('sr-Latn', {
+    day: 'numeric', month: 'long', year: 'numeric'
+  });
+}
+---
+
+<BaseLayout
+  title="Teme — Forma Uma"
+  description="Tekstovi o psihoterapiji, mentalnom zdravlju i svakodnevnim temama sa kojima se sreće terapijska praksa Forma Uma."
+>
+
+  <Nav />
+
+  <main>
+
+    <!-- ═══ HERO ══════════════════════════════════════════════════════════ -->
+    <section class="page-hero">
+      <div class="container page-hero-inner">
+        <p class="eyebrow">Teme</p>
+        <h1>Tekstovi koji pomažu</h1>
+        <p class="page-hero-sub">
+          Iz terapijske prakse — o temama sa kojima se klijenti najčešće sreću.
+          Tekstovi nisu zamena za terapiju, ali mogu biti koristan prvi korak.
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══ LISTA ČLANAKA ═════════════════════════════════════════════════ -->
+    <section class="articles">
+      <div class="container">
+        <ul class="articles-grid">
+          {articles.map(article => (
+            <li>
+              <a href={`/teme/${article.slug}`} class="article-card">
+                <div class="article-tag">{article.data.tag}</div>
+                <h2>{article.data.title}</h2>
+                <p>{article.data.description}</p>
+                <div class="article-meta">
+                  <time datetime={article.data.date.toISOString()}>
+                    {formatDate(article.data.date)}
+                  </time>
+                  <span class="article-link-text">Čitaj dalje →</span>
+                </div>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <!-- ═══ CTA TRAKA ═════════════════════════════════════════════════════ -->
+    <section class="cta-strip">
+      <div class="container cta-inner">
+        <h2>Prepoznajete nešto od ovoga<br>u svom životu?</h2>
+        <a href="/kontakt" class="btn btn-primary btn-lg">Zakažite besplatnu konsultaciju</a>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+
+</BaseLayout>
+
+<style>
+  .eyebrow {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    max-width: none;
+  }
+
+  /* ── Hero ─────────────────────────────────────────────────────────────── */
+  .page-hero {
+    padding-top: var(--space-20);
+    padding-bottom: var(--space-16);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .page-hero-inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    max-width: var(--container-md);
+  }
+
+  .page-hero h1 {
+    font-size: clamp(var(--text-3xl), 4vw, var(--text-4xl));
+    font-weight: 400;
+    letter-spacing: -0.02em;
+  }
+
+  .page-hero-sub {
+    font-size: var(--text-md);
+    color: var(--color-text-muted);
+    line-height: var(--leading-normal);
+    max-width: 54ch;
+  }
+
+  /* ── Articles ─────────────────────────────────────────────────────────── */
+  .articles {
+    padding-block: var(--space-20);
+  }
+
+  .articles-grid {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+  }
+
+  @media (max-width: 900px) {
+    .articles-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .articles-grid {
+      grid-template-columns: 1fr;
+      max-width: 520px;
+    }
+  }
+
+  .article-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-8);
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+    transition:
+      box-shadow var(--duration-normal) var(--ease-out),
+      transform  var(--duration-normal) var(--ease-out);
+  }
+
+  .article-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .article-tag {
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    font-family: var(--font-body);
+  }
+
+  .article-card h2 {
+    font-size: var(--text-lg);
+    font-weight: 500;
+    line-height: var(--leading-snug);
+  }
+
+  .article-card p {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: var(--leading-loose);
+    flex-grow: 1;
+  }
+
+  .article-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .article-meta time {
+    font-size: var(--text-xs);
+    color: var(--color-text-subtle);
+  }
+
+  .article-link-text {
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--color-accent);
+  }
+
+  /* ── CTA strip ────────────────────────────────────────────────────────── */
+  .cta-strip {
+    padding-block: var(--space-24);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .cta-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-8);
+  }
+
+  .cta-inner h2 {
+    font-size: clamp(var(--text-2xl), 3.5vw, var(--text-3xl));
+    font-weight: 400;
+    line-height: var(--leading-snug);
+  }
+
+  .btn-lg {
+    padding: var(--space-4) var(--space-8);
+    font-size: var(--text-sm);
+  }
+</style>

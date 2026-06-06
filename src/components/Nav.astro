@@ -1,0 +1,114 @@
+---
+const navLinks = [
+  { href: '/pristup', label: 'Pristup' },
+  { href: '/teme',    label: 'Teme' },
+  { href: '/o-nama',  label: 'O nama' },
+  { href: '/kontakt', label: 'Kontakt' },
+];
+
+const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+---
+
+<header class="nav-wrapper">
+  <nav class="container nav-inner">
+    <a href="/" class="nav-logo">Forma Uma</a>
+
+    <ul class="nav-links">
+      {navLinks.map(link => (
+        <li>
+          <a
+            href={link.href}
+            class:list={['nav-link', { 'nav-link--active': currentPath === link.href }]}
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <a href="/kontakt" class="btn btn-primary nav-cta">Zakažite konsultaciju</a>
+
+    <button class="nav-burger" aria-label="Meni">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<style>
+  .nav-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+    backdrop-filter: blur(8px);
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+    height: 68px;
+  }
+
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 500;
+    color: var(--color-text);
+    text-decoration: none;
+    flex-shrink: 0;
+    letter-spacing: -0.01em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: var(--space-6);
+    list-style: none;
+    margin-left: auto;
+  }
+
+  .nav-link {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: color var(--duration-fast) var(--ease-out);
+  }
+
+  .nav-link:hover,
+  .nav-link--active {
+    color: var(--color-text);
+  }
+
+  .nav-link--active {
+    font-weight: 500;
+  }
+
+  .nav-cta {
+    flex-shrink: 0;
+    font-size: var(--text-xs);
+  }
+
+  .nav-burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--space-2);
+    margin-left: auto;
+  }
+
+  .nav-burger span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background-color: var(--color-text);
+  }
+
+  @media (max-width: 767px) {
+    .nav-links, .nav-cta { display: none; }
+    .nav-burger { display: flex; }
+  }
+</style>

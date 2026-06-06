@@ -1,0 +1,354 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Kontakt — Forma Uma"
+  description="Zakažite besplatnu uvodnu konsultaciju ili postavite pitanje. Psihoterapijska praksa Forma Uma, Beograd i online."
+>
+
+  <Nav />
+
+  <main>
+
+    <!-- ═══ HERO ══════════════════════════════════════════════════════════ -->
+    <section class="page-hero">
+      <div class="container page-hero-inner">
+        <p class="eyebrow">Kontakt</p>
+        <h1>Hajde da razgovaramo</h1>
+        <p class="page-hero-sub">
+          Prva konsultacija je besplatna i bez obaveze. Traje oko petnaest minuta
+          i služi samo da se upoznamo — da vidite da li vam odgovara način na koji
+          radimo, pre nego što donesete bilo kakvu odluku.
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══ KONTAKT SADRŽAJ ════════════════════════════════════════════════ -->
+    <section class="contact-section">
+      <div class="container contact-inner">
+
+        <!-- Leva kolona: zakazivanje -->
+        <div class="contact-main">
+          <h2>Zakažite konsultaciju</h2>
+          <p>
+            Kliknite dugme ispod da odete na stranicu za zakazivanje. Možete izabrati
+            termin koji vam odgovara — uživo u Beogradu ili putem video poziva.
+          </p>
+
+          <!-- Placeholder za buduće zakazivanje / Calendly -->
+          <div class="booking-placeholder">
+            <p class="booking-note">Ovde će biti widget za zakazivanje.</p>
+            <a href="mailto:[email]" class="btn btn-primary btn-lg">
+              Zakažite konsultaciju
+            </a>
+          </div>
+
+          <div class="contact-note">
+            <p>
+              Ako imate pitanje pre nego što se odlučite, slobodno napišite mejl
+              ili pozovite — odgovaramo u roku od jednog radnog dana.
+            </p>
+          </div>
+        </div>
+
+        <!-- Desna kolona: info -->
+        <aside class="contact-info">
+
+          <div class="info-block">
+            <p class="info-label">Email</p>
+            <p class="info-value">[email]</p>
+          </div>
+
+          <div class="info-block">
+            <p class="info-label">Telefon</p>
+            <p class="info-value">[telefon]</p>
+            <p class="info-sub">Dostupni Pon–Pet, 09:00–20:00</p>
+          </div>
+
+          <div class="info-block">
+            <p class="info-label">Lokacija (uživo)</p>
+            <p class="info-value">[Adresa], Beograd</p>
+            <p class="info-sub">Dostupan i online via video poziv</p>
+          </div>
+
+          <div class="info-block">
+            <p class="info-label">Cena</p>
+            <p class="info-value">Prva konsultacija — besplatno</p>
+            <p class="info-sub">
+              Cena redovnih seansi dostupna na upit.<br>
+              Moguće prilagođavanje u posebnim okolnostima.
+            </p>
+          </div>
+
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- ═══ FAQ ═══════════════════════════════════════════════════════════ -->
+    <section class="faq">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Pitanja</p>
+          <h2>Često postavljana pitanja</h2>
+        </div>
+
+        <dl class="faq-list">
+
+          <div class="faq-item">
+            <dt>Šta se dešava na prvom susretu?</dt>
+            <dd>
+              Prvi susret je razgovor, ne procena. Pričate o tome šta vas dovodi,
+              šta ste dosad probali, i šta biste hteli da bude drugačije. Nema
+              testova ni formulara.
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt>Koliko traju seanse i koliko često se odvijaju?</dt>
+            <dd>
+              Standardna seansa traje pedeset minuta. Najčešće se sreće jednom
+              nedeljno, ali tempo prilagođavamo vašim potrebama i rasporedu.
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt>Je li online terapija jednako efikasna?</dt>
+            <dd>
+              Za većinu tema sa kojima radimo — da. Online format omogućava isti
+              kvalitet razgovora, a mnogim klijentima je praktičniji. Neke teme
+              ili preference mogu da zahtevaju rad uživo.
+            </dd>
+          </div>
+
+          <div class="faq-item">
+            <dt>Šta ako se ne odlučim posle besplatne konsultacije?</dt>
+            <dd>
+              Nema nikakve obaveze. Cilj konsultacije je da dobijete informacije
+              i osećaj — ne da se odmah odlučite.
+            </dd>
+          </div>
+
+        </dl>
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+
+</BaseLayout>
+
+<style>
+  .eyebrow {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    max-width: none;
+  }
+
+  /* ── Hero ─────────────────────────────────────────────────────────────── */
+  .page-hero {
+    padding-top: var(--space-20);
+    padding-bottom: var(--space-16);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .page-hero-inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    max-width: var(--container-md);
+  }
+
+  .page-hero h1 {
+    font-size: clamp(var(--text-3xl), 4vw, var(--text-4xl));
+    font-weight: 400;
+    letter-spacing: -0.02em;
+  }
+
+  .page-hero-sub {
+    font-size: var(--text-md);
+    color: var(--color-text-muted);
+    line-height: var(--leading-normal);
+    max-width: 56ch;
+  }
+
+  /* ── Contact ──────────────────────────────────────────────────────────── */
+  .contact-section {
+    padding-block: var(--space-24);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .contact-inner {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: var(--space-20);
+    align-items: start;
+  }
+
+  @media (max-width: 900px) {
+    .contact-inner {
+      grid-template-columns: 1fr;
+      gap: var(--space-12);
+    }
+  }
+
+  .contact-main h2 {
+    font-size: var(--text-2xl);
+    font-weight: 400;
+    margin-bottom: var(--space-4);
+  }
+
+  .contact-main > p {
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+    line-height: var(--leading-loose);
+    max-width: 52ch;
+    margin-bottom: var(--space-8);
+  }
+
+  .booking-placeholder {
+    background-color: var(--color-surface);
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-12) var(--space-10);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-6);
+    text-align: center;
+    margin-bottom: var(--space-8);
+  }
+
+  .booking-note {
+    font-size: var(--text-sm);
+    color: var(--color-text-subtle);
+    max-width: none;
+  }
+
+  .btn-lg {
+    padding: var(--space-4) var(--space-8);
+    font-size: var(--text-sm);
+  }
+
+  .contact-note {
+    padding: var(--space-5) var(--space-6);
+    background-color: var(--color-accent-light);
+    border-radius: var(--radius-md);
+    border-left: 3px solid var(--color-accent);
+  }
+
+  .contact-note p {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: var(--leading-loose);
+    max-width: none;
+  }
+
+  /* ── Contact Info ─────────────────────────────────────────────────────── */
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+    position: sticky;
+    top: calc(68px + var(--space-8));
+  }
+
+  .info-block {
+    padding-bottom: var(--space-8);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .info-block:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .info-label {
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-subtle);
+    margin-bottom: var(--space-2);
+    max-width: none;
+  }
+
+  .info-value {
+    font-size: var(--text-base);
+    font-weight: 500;
+    color: var(--color-text);
+    max-width: none;
+  }
+
+  .info-sub {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: var(--leading-loose);
+    margin-top: var(--space-1);
+    max-width: none;
+  }
+
+  /* ── FAQ ──────────────────────────────────────────────────────────────── */
+  .faq {
+    padding-block: var(--space-24);
+  }
+
+  .section-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    margin-bottom: var(--space-12);
+  }
+
+  .section-header h2 {
+    font-size: var(--text-3xl);
+    font-weight: 400;
+  }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-width: var(--container-md);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .faq-item {
+    padding-block: var(--space-8);
+    border-bottom: 1px solid var(--color-border);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+    align-items: start;
+  }
+
+  @media (max-width: 767px) {
+    .faq-item {
+      grid-template-columns: 1fr;
+      gap: var(--space-3);
+    }
+  }
+
+  .faq-item dt {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 500;
+    line-height: var(--leading-snug);
+    color: var(--color-text);
+  }
+
+  .faq-item dd {
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+    line-height: var(--leading-loose);
+    max-width: 52ch;
+  }
+</style>
