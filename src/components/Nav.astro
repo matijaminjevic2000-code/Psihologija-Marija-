@@ -9,7 +9,7 @@ const navLinks = [
 const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 ---
 
-<header class="nav-wrapper">
+<header class="nav-wrapper" id="siteHeader">
   <nav class="container nav-inner">
     <a href="/" class="nav-logo">Forma Uma</a>
 
@@ -28,10 +28,37 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 
     <a href="/kontakt" class="btn btn-primary nav-cta">Zakažite konsultaciju</a>
 
-    <button class="nav-burger" aria-label="Meni">
-      <span></span><span></span><span></span>
+    <button
+      class="nav-burger"
+      id="navBurger"
+      aria-label="Otvori meni"
+      aria-expanded="false"
+      aria-controls="navMobile"
+    >
+      <span class="burger-line"></span>
+      <span class="burger-line"></span>
+      <span class="burger-line"></span>
     </button>
   </nav>
+
+  <!-- Mobile panel -->
+  <div class="nav-mobile" id="navMobile" aria-hidden="true">
+    <ul class="nav-mobile-links">
+      {navLinks.map(link => (
+        <li>
+          <a
+            href={link.href}
+            class:list={['nav-mobile-link', { 'nav-mobile-link--active': currentPath === link.href }]}
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+    <div class="nav-mobile-cta">
+      <a href="/kontakt" class="btn btn-primary">Zakažite konsultaciju</a>
+    </div>
+  </div>
 </header>
 
 <style>
@@ -41,7 +68,6 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
     z-index: 100;
     background-color: var(--color-bg);
     border-bottom: 1px solid var(--color-border);
-    backdrop-filter: blur(8px);
   }
 
   .nav-inner {
@@ -89,26 +115,128 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
     font-size: var(--text-xs);
   }
 
+  /* ── Hamburger button ─────────────────────────────────────────────────── */
   .nav-burger {
     display: none;
     flex-direction: column;
+    justify-content: center;
     gap: 5px;
     background: none;
     border: none;
     cursor: pointer;
-    padding: var(--space-2);
+    padding: var(--space-3);
     margin-left: auto;
+    width: 44px;
+    height: 44px;
   }
 
-  .nav-burger span {
+  .burger-line {
     display: block;
     width: 22px;
     height: 1.5px;
     background-color: var(--color-text);
+    transform-origin: center;
+    transition:
+      transform  var(--duration-normal) var(--ease-out),
+      opacity    var(--duration-fast)   var(--ease-out);
   }
 
+  /* X animation when open */
+  .nav-burger[aria-expanded="true"] .burger-line:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg);
+  }
+  .nav-burger[aria-expanded="true"] .burger-line:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  .nav-burger[aria-expanded="true"] .burger-line:nth-child(3) {
+    transform: translateY(-6.5px) rotate(-45deg);
+  }
+
+  /* ── Mobile panel ─────────────────────────────────────────────────────── */
+  .nav-mobile {
+    display: none;
+    flex-direction: column;
+    background-color: var(--color-bg);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    padding-block: var(--space-4);
+  }
+
+  .nav-mobile.is-open {
+    display: flex;
+  }
+
+  .nav-mobile-links {
+    list-style: none;
+  }
+
+  .nav-mobile-link {
+    display: block;
+    padding: var(--space-4) var(--space-6);
+    font-size: var(--text-base);
+    font-weight: 400;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: color var(--duration-fast) var(--ease-out);
+  }
+
+  .nav-mobile-link:hover,
+  .nav-mobile-link--active {
+    color: var(--color-text);
+  }
+
+  .nav-mobile-link--active {
+    font-weight: 500;
+  }
+
+  .nav-mobile-cta {
+    padding: var(--space-4) var(--space-6) var(--space-2);
+    border-top: 1px solid var(--color-border);
+    margin-top: var(--space-2);
+  }
+
+  .nav-mobile-cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* ── Responsive ───────────────────────────────────────────────────────── */
   @media (max-width: 767px) {
     .nav-links, .nav-cta { display: none; }
     .nav-burger { display: flex; }
   }
 </style>
+
+<script>
+  const burger = document.getElementById('navBurger');
+  const mobileMenu = document.getElementById('navMobile');
+
+  burger?.addEventListener('click', () => {
+    const isOpen = mobileMenu?.classList.toggle('is-open');
+    burger.setAttribute('aria-expanded', String(isOpen));
+    mobileMenu?.setAttribute('aria-hidden', String(!isOpen));
+    burger.setAttribute('aria-label', isOpen ? 'Zatvori meni' : 'Otvori meni');
+  });
+
+  // Close on any mobile link click
+  mobileMenu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('is-open');
+      burger?.setAttribute('aria-expanded', 'false');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      burger?.setAttribute('aria-label', 'Otvori meni');
+    });
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileMenu?.classList.contains('is-open')) {
+      mobileMenu.classList.remove('is-open');
+      burger?.setAttribute('aria-expanded', 'false');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      burger?.setAttribute('aria-label', 'Otvori meni');
+      burger?.focus();
+    }
+  });
+</script>

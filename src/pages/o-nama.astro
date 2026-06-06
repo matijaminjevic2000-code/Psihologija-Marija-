@@ -414,4 +414,16 @@ import Footer from '../components/Footer.astro';
     padding: var(--space-4) var(--space-8);
     font-size: var(--text-sm);
   }
+
+  @media (max-width: 767px) {
+    .therapist-avatar { width: 100px; height: 100px; }
+    .therapist-intro h1 { font-size: var(--text-2xl); }
+    .therapist-tagline { font-size: var(--text-base); }
+    .about-text p { font-size: var(--text-base); }
+    .section-header { margin-bottom: var(--space-8); }
+    .section-header h2 { font-size: var(--text-2xl); }
+    .edu-list li { grid-template-columns: 44px 1fr; }
+    .cta-inner h2 { font-size: var(--text-2xl); }
+    .cta-inner .btn { width: 100%; max-width: 320px; justify-content: center; }
+  }
 </style>

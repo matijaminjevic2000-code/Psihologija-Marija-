@@ -351,4 +351,16 @@ import Footer from '../components/Footer.astro';
     line-height: var(--leading-loose);
     max-width: 52ch;
   }
+
+  @media (max-width: 767px) {
+    .page-hero h1 { font-size: var(--text-2xl); }
+    .page-hero-sub { font-size: var(--text-base); }
+    .contact-main h2 { font-size: var(--text-xl); }
+    .contact-info { position: static; }
+    .booking-placeholder { padding: var(--space-8) var(--space-6); }
+    .booking-placeholder .btn { width: 100%; justify-content: center; }
+    .section-header { margin-bottom: var(--space-8); }
+    .section-header h2 { font-size: var(--text-2xl); }
+    .faq-item dd { max-width: 100%; }
+  }
 </style>

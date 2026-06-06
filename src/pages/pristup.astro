@@ -422,4 +422,15 @@ import Footer from '../components/Footer.astro';
     font-size: var(--text-sm);
   }
 
+  @media (max-width: 767px) {
+    .page-hero h1 { font-size: var(--text-2xl); }
+    .page-hero-sub { font-size: var(--text-base); }
+    .section-header { margin-bottom: var(--space-8); }
+    .section-header h2 { font-size: var(--text-2xl); }
+    .topics-text { position: static; }
+    .step-body p { max-width: 100%; }
+    .format-inner p { max-width: 100%; }
+    .cta-inner h2 { font-size: var(--text-2xl); }
+    .cta-inner .btn { width: 100%; max-width: 320px; justify-content: center; }
+  }
 </style>

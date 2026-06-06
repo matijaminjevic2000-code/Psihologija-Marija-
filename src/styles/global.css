@@ -203,6 +203,7 @@ small {
   justify-content: center;
   gap: var(--space-2);
   padding: var(--space-3) var(--space-6);
+  min-height: 44px;
   border-radius: var(--radius-sm);
   font-family: var(--font-body);
   font-size: var(--text-sm);
@@ -212,6 +213,8 @@ small {
   text-decoration: none;
   cursor: pointer;
   border: 1px solid transparent;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
   transition:
     background-color var(--duration-fast) var(--ease-out),
     color           var(--duration-fast) var(--ease-out),
@@ -278,4 +281,37 @@ hr {
 ::selection {
   background-color: var(--color-accent);
   color: var(--color-white);
+}
+
+/* ─── Mobile overrides ────────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  /* Tighter container padding on small phones */
+  .container {
+    padding-inline: var(--space-5);
+  }
+
+  /* Reduce heavy section padding */
+  .hero,
+  .pillars,
+  .blog,
+  .quote-strip,
+  .cta-strip,
+  .page-hero,
+  .steps,
+  .topics,
+  .format,
+  .about-section,
+  .education,
+  .therapist-hero,
+  .articles,
+  .article-body,
+  .contact-section,
+  .faq {
+    padding-block: var(--space-12);
+  }
+
+  /* Readable body text on narrow screens */
+  p {
+    max-width: 100%;
+  }
 }

@@ -235,4 +235,12 @@ function formatDate(date: Date) {
   .back-articles:hover {
     color: var(--color-accent);
   }
+
+  @media (max-width: 767px) {
+    .article-hero h1 { font-size: var(--text-xl); }
+    .article-desc { font-size: var(--text-base); }
+    .article-content :global(h2) { font-size: var(--text-lg); margin-top: var(--space-8); }
+    .cta-inner h2 { font-size: var(--text-2xl); }
+    .cta-inner .btn { width: 100%; max-width: 320px; justify-content: center; }
+  }
 </style>
