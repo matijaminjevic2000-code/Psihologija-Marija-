@@ -1,0 +1,597 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Forma Uma — Psihoterapija, Beograd i online">
+
+  <!-- ═══ NAVIGACIJA ═══════════════════════════════════════════════════════ -->
+  <header class="nav-wrapper">
+    <nav class="container nav-inner">
+      <a href="/" class="nav-logo">Forma Uma</a>
+
+      <ul class="nav-links">
+        <li><a href="/pristup">Pristup</a></li>
+        <li><a href="/teme">Teme</a></li>
+        <li><a href="/o-nama">O nama</a></li>
+        <li><a href="/kontakt">Kontakt</a></li>
+      </ul>
+
+      <a href="/kontakt" class="btn btn-primary nav-cta">Zakažite konsultaciju</a>
+
+      <button class="nav-burger" aria-label="Meni">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ═══ HERO ══════════════════════════════════════════════════════════ -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <p class="eyebrow">Psihoterapija · Beograd i online</p>
+
+        <h1 class="hero-title">
+          Prostor za razgovor,<br>
+          onda kada vam<br>
+          najviše treba.
+        </h1>
+
+        <p class="hero-sub">
+          Radimo sa anksioznošću, burnoutom, odnosima i životnim tranzicijama —
+          u sigurnom, poverljivom okruženju, prilagođenom vašim potrebama.
+        </p>
+
+        <div class="hero-actions">
+          <a href="/kontakt" class="btn btn-primary">Besplatna konsultacija</a>
+          <a href="/pristup" class="hero-link">Upoznajte pristup →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ TRI KOLONE ════════════════════════════════════════════════════ -->
+    <section class="pillars">
+      <div class="container pillars-grid">
+
+        <div class="pillar">
+          <div class="pillar-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+          </div>
+          <h3>Besplatna prva konsultacija</h3>
+          <p>Pre nego što počnemo, razgovaramo. Bez obaveze, bez pritiska — da vidimo da li smo pravi za vas.</p>
+        </div>
+
+        <div class="pillar">
+          <div class="pillar-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2"/>
+              <path d="M8 21h8M12 17v4"/>
+            </svg>
+          </div>
+          <h3>Uživo i online</h3>
+          <p>Seanse u Beogradu ili putem video poziva — isti stepen pažnje i poverljivosti, gde god da ste.</p>
+        </div>
+
+        <div class="pillar">
+          <div class="pillar-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <h3>Različiti pravci, jedan pristup</h3>
+          <p>Integrišemo kognitivno-bihejvioralne, psihodinamske i humanističke metode prema vašim potrebama.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══ IZ DNEVNIKA PRAKSE ════════════════════════════════════════════ -->
+    <section class="blog">
+      <div class="container">
+
+        <div class="section-header">
+          <p class="eyebrow">Iz dnevnika prakse</p>
+          <h2>Tekstovi koji pomažu</h2>
+        </div>
+
+        <div class="blog-grid">
+
+          <article class="blog-card">
+            <div class="blog-tag">Anksioznost</div>
+            <h3>Kada briga ne prestaje: šta se zapravo dešava u vašem nervnom sistemu</h3>
+            <p>Anksioznost nije slabost ni karakter — to je naučen obrazac koji se može promeniti. Razumevanje mehanizma je prvi korak.</p>
+            <a href="/teme/anksioznost" class="blog-link">Čitaj dalje →</a>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-tag">REKBT</div>
+            <h3>Šta je racionalno-emotivna terapija i kome odgovara</h3>
+            <p>REBT pristup uči nas da preispitamo uverenja koja nas drže zaglavljenim — ne samo misli, već i vrednosti koje ih pokreću.</p>
+            <a href="/teme/rebt" class="blog-link">Čitaj dalje →</a>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-tag">Vodič</div>
+            <h3>Kako izabrati psihoterapeuta koji vam odgovara</h3>
+            <p>Terapeutski odnos je važniji od pravca. Evo na šta da obratite pažnju na prvom susretu — i kada je u redu promeniti terapeuta.</p>
+            <a href="/teme/kako-izabrati-terapeuta" class="blog-link">Čitaj dalje →</a>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══ CITAT ═════════════════════════════════════════════════════════ -->
+    <section class="quote-strip">
+      <div class="container quote-inner">
+        <blockquote>
+          <p>
+            „Svaka promena počinje trenutkom kada neko konačno kaže
+            ono što je dugo nosio u sebi. Moj posao je da taj trenutak
+            bude bezbedan."
+          </p>
+          <footer>
+            <cite>— Marija Nikolić, psihoterapeut</cite>
+          </footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ═══ CTA TRAKA ═════════════════════════════════════════════════════ -->
+    <section class="cta-strip">
+      <div class="container cta-inner">
+        <h2>Prvi korak je najlakši<br>kada niste sami.</h2>
+        <a href="/kontakt" class="btn btn-primary btn-lg">Zakažite besplatnu konsultaciju</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══ FOOTER ════════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+
+      <div class="footer-brand">
+        <p class="footer-logo">Forma Uma</p>
+        <p>Psihoterapijska praksa<br>Beograd i online</p>
+      </div>
+
+      <nav class="footer-nav">
+        <p class="footer-heading">Navigacija</p>
+        <ul>
+          <li><a href="/pristup">Pristup</a></li>
+          <li><a href="/teme">Teme</a></li>
+          <li><a href="/o-nama">O nama</a></li>
+          <li><a href="/kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-contact">
+        <p class="footer-heading">Kontakt</p>
+        <p>hello@formauma.rs</p>
+        <p>+381 60 000 0000</p>
+        <p style="margin-top: var(--space-4); font-size: var(--text-xs); color: var(--color-text-subtle);">
+          Pon – Pet, 09:00 – 20:00
+        </p>
+      </div>
+
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2025 Forma Uma. Sva prava zadržana.</p>
+    </div>
+  </footer>
+
+</BaseLayout>
+
+<style>
+  /* ── Nav ──────────────────────────────────────────────────────────────── */
+  .nav-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+    backdrop-filter: blur(8px);
+  }
+
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+    height: 68px;
+  }
+
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 500;
+    color: var(--color-text);
+    text-decoration: none;
+    flex-shrink: 0;
+    letter-spacing: -0.01em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: var(--space-6);
+    list-style: none;
+    margin-left: auto;
+  }
+
+  .nav-links a {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: color var(--duration-fast) var(--ease-out);
+  }
+
+  .nav-links a:hover {
+    color: var(--color-text);
+  }
+
+  .nav-cta {
+    flex-shrink: 0;
+    font-size: var(--text-xs);
+  }
+
+  .nav-burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--space-2);
+    margin-left: auto;
+  }
+
+  .nav-burger span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background-color: var(--color-text);
+  }
+
+  @media (max-width: 767px) {
+    .nav-links, .nav-cta { display: none; }
+    .nav-burger { display: flex; }
+  }
+
+  /* ── Hero ─────────────────────────────────────────────────────────────── */
+  .hero {
+    padding-top: var(--space-24);
+    padding-bottom: var(--space-24);
+    text-align: center;
+  }
+
+  .hero-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-6);
+  }
+
+  .eyebrow {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    max-width: none;
+  }
+
+  .hero-title {
+    font-size: clamp(var(--text-3xl), 5.5vw, var(--text-5xl));
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--color-text);
+    max-width: 14ch;
+  }
+
+  .hero-sub {
+    font-size: var(--text-md);
+    color: var(--color-text-muted);
+    max-width: 46ch;
+    line-height: var(--leading-normal);
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+    margin-top: var(--space-4);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-link {
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: color var(--duration-fast) var(--ease-out);
+  }
+
+  .hero-link:hover {
+    color: var(--color-accent);
+  }
+
+  /* ── Pillars ──────────────────────────────────────────────────────────── */
+  .pillars {
+    background-color: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    padding-block: var(--space-20);
+  }
+
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-12);
+  }
+
+  @media (max-width: 900px) {
+    .pillars-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-10);
+      max-width: 480px;
+      margin-inline: auto;
+    }
+  }
+
+  .pillar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .pillar-icon {
+    width: 44px;
+    height: 44px;
+    background-color: var(--color-accent-light);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-accent);
+  }
+
+  .pillar h3 {
+    font-size: var(--text-lg);
+    font-weight: 500;
+    line-height: var(--leading-snug);
+  }
+
+  .pillar p {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: var(--leading-loose);
+    max-width: 36ch;
+  }
+
+  /* ── Blog ─────────────────────────────────────────────────────────────── */
+  .blog {
+    padding-block: var(--space-24);
+  }
+
+  .section-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    margin-bottom: var(--space-12);
+  }
+
+  .section-header h2 {
+    font-size: var(--text-3xl);
+    font-weight: 400;
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+  }
+
+  @media (max-width: 900px) {
+    .blog-grid {
+      grid-template-columns: 1fr;
+      max-width: 520px;
+    }
+  }
+
+  .blog-card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-8);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    transition: box-shadow var(--duration-normal) var(--ease-out),
+                transform   var(--duration-normal) var(--ease-out);
+  }
+
+  .blog-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .blog-tag {
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    font-family: var(--font-body);
+  }
+
+  .blog-card h3 {
+    font-size: var(--text-lg);
+    font-weight: 500;
+    line-height: var(--leading-snug);
+  }
+
+  .blog-card p {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: var(--leading-loose);
+    flex-grow: 1;
+  }
+
+  .blog-link {
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--color-accent);
+    text-decoration: none;
+    margin-top: auto;
+    transition: color var(--duration-fast) var(--ease-out);
+  }
+
+  .blog-link:hover {
+    color: var(--color-accent-hover);
+  }
+
+  /* ── Quote ────────────────────────────────────────────────────────────── */
+  .quote-strip {
+    background-color: var(--color-accent);
+    padding-block: var(--space-20);
+  }
+
+  .quote-inner {
+    max-width: var(--container-md);
+  }
+
+  .quote-strip blockquote p {
+    font-family: var(--font-display);
+    font-size: clamp(var(--text-xl), 2.5vw, var(--text-2xl));
+    font-weight: 400;
+    font-style: italic;
+    line-height: var(--leading-snug);
+    color: var(--color-white);
+    max-width: none;
+  }
+
+  .quote-strip blockquote footer {
+    margin-top: var(--space-6);
+  }
+
+  .quote-strip cite {
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-style: normal;
+    color: rgba(255, 255, 255, 0.65);
+    letter-spacing: 0.03em;
+  }
+
+  /* ── CTA strip ────────────────────────────────────────────────────────── */
+  .cta-strip {
+    padding-block: var(--space-24);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .cta-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-8);
+  }
+
+  .cta-inner h2 {
+    font-size: clamp(var(--text-2xl), 3.5vw, var(--text-3xl));
+    font-weight: 400;
+    line-height: var(--leading-snug);
+  }
+
+  .btn-lg {
+    padding: var(--space-4) var(--space-8);
+    font-size: var(--text-sm);
+  }
+
+  /* ── Footer ───────────────────────────────────────────────────────────── */
+  .footer {
+    background-color: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-8);
+  }
+
+  .footer-inner {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: var(--space-12);
+    padding-bottom: var(--space-12);
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: var(--space-8);
+  }
+
+  @media (max-width: 767px) {
+    .footer-inner {
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+    }
+  }
+
+  .footer-brand p {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: var(--leading-loose);
+    max-width: none;
+  }
+
+  .footer-logo {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 500;
+    color: var(--color-text) !important;
+    margin-bottom: var(--space-3);
+  }
+
+  .footer-heading {
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-subtle);
+    margin-bottom: var(--space-4);
+    max-width: none;
+  }
+
+  .footer-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .footer-nav a {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: color var(--duration-fast) var(--ease-out);
+  }
+
+  .footer-nav a:hover {
+    color: var(--color-accent);
+  }
+
+  .footer-contact p {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    max-width: none;
+  }
+
+  .footer-bottom p {
+    font-size: var(--text-xs);
+    color: var(--color-text-subtle);
+    max-width: none;
+  }
+</style>
