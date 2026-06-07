@@ -6,6 +6,41 @@ import Footer from '../components/Footer.astro';
 
 <BaseLayout title="Forma Uma — Psihoterapija, Beograd i online">
 
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "name": "Forma Uma",
+    "description": "Psihoterapijska praksa — individualne seanse u Beogradu i online.",
+    "url": "https://formauma.rs",
+    "email": "psihoterapijasaMK@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Beograd",
+      "addressCountry": "RS"
+    },
+    "areaServed": ["Beograd", "online"],
+    "availableLanguage": ["sr", "en", "de"],
+    "employee": {
+      "@type": "Person",
+      "name": "Marija Krstić",
+      "jobTitle": "REBT psihoterapeut u edukaciji",
+      "email": "psihoterapijasaMK@gmail.com",
+      "knowsLanguage": ["sr", "en", "de"],
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "REBT psihoterapeut u edukaciji",
+        "occupationLocation": {
+          "@type": "City",
+          "name": "Beograd"
+        }
+      },
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Filozofski fakultet, Univerzitet u Beogradu"
+      }
+    }
+  })} />
+
   <Nav />
 
   <main>

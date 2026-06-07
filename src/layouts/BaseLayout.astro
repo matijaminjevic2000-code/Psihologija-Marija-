@@ -8,7 +8,7 @@ interface Props {
 
 const {
   title,
-  description = 'Forma Uma — arhitektura i dizajn enterijera',
+  description = 'Psihoterapijska praksa Forma Uma — Beograd i online',
 } = Astro.props;
 ---
 
@@ -26,6 +26,7 @@ const {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <title>{title}</title>
+    <slot name="head" />
   </head>
   <body>
     <slot />

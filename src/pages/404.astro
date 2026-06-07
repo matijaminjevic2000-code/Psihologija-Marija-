@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Stranica nije pronađena — Forma Uma"
+  description="Ova stranica ne postoji."
+>
+
+  <Nav />
+
+  <main>
+    <section class="not-found">
+      <div class="container not-found-inner">
+        <p class="eyebrow">Greška 404</p>
+        <h1>Stranica ne postoji</h1>
+        <p class="not-found-text">
+          Izgledа da je link koji ste pratili pogrešan ili je stranica premeštena.
+          Nema razloga za brigu — početna stranica je tu.
+        </p>
+        <a href="/" class="btn btn-primary">Nazad na početnu</a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+
+</BaseLayout>
+
+<style>
+  .eyebrow {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    max-width: none;
+  }
+
+  .not-found {
+    padding-top: var(--space-32);
+    padding-bottom: var(--space-32);
+  }
+
+  .not-found-inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    max-width: var(--container-sm);
+  }
+
+  .not-found h1 {
+    font-size: clamp(var(--text-3xl), 4vw, var(--text-4xl));
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  .not-found-text {
+    font-size: var(--text-md);
+    color: var(--color-text-muted);
+    line-height: var(--leading-loose);
+    max-width: 48ch;
+  }
+
+  @media (max-width: 767px) {
+    .not-found {
+      padding-top: var(--space-20);
+      padding-bottom: var(--space-20);
+    }
+    .not-found h1 { font-size: var(--text-2xl); }
+    .not-found-text { font-size: var(--text-base); }
+    .btn { width: 100%; max-width: 320px; justify-content: center; }
+  }
+</style>

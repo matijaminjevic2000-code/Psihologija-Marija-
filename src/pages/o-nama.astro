@@ -11,6 +11,38 @@ import marijaPhoto from '../assets/marija-kristic.jpg';
   description="Marija Krstić, REBT psihoterapeut u edukaciji. Psihoterapija u Beogradu i online, na srpskom, engleskom i nemačkom jeziku."
 >
 
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Marija Krstić",
+    "jobTitle": "REBT psihoterapeut u edukaciji",
+    "email": "psihoterapijasaMK@gmail.com",
+    "url": "https://formauma.rs/o-nama",
+    "knowsLanguage": ["sr", "en", "de"],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Beograd",
+      "addressCountry": "RS"
+    },
+    "hasOccupation": {
+      "@type": "Occupation",
+      "name": "REBT psihoterapeut u edukaciji",
+      "occupationLocation": {
+        "@type": "City",
+        "name": "Beograd"
+      }
+    },
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "Filozofski fakultet, Univerzitet u Beogradu"
+    },
+    "worksFor": {
+      "@type": "MedicalBusiness",
+      "name": "Forma Uma",
+      "url": "https://formauma.rs"
+    }
+  })} />
+
   <Nav />
 
   <main>
