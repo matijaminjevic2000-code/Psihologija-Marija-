@@ -2,6 +2,8 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import { Image } from 'astro:assets';
+import marijaPhoto from '../assets/marija-kristic.jpg';
 ---
 
 <BaseLayout
@@ -16,9 +18,12 @@ import Footer from '../components/Footer.astro';
     <!-- ═══ HERO ══════════════════════════════════════════════════════════ -->
     <section class="therapist-hero">
       <div class="container therapist-hero-inner">
-        <div class="therapist-avatar" aria-hidden="true">
-          <span>[foto]</span>
-        </div>
+        <Image
+          src={marijaPhoto}
+          alt="Marija Krstić, REBT psihoterapeut u edukaciji"
+          width={240}
+          class="therapist-photo"
+        />
         <div class="therapist-intro">
           <p class="eyebrow">O nama</p>
           <h1>Marija Krstić</h1>
@@ -146,7 +151,7 @@ import Footer from '../components/Footer.astro';
 
   .therapist-hero-inner {
     display: grid;
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 240px 1fr;
     gap: var(--space-12);
     align-items: center;
     max-width: var(--container-lg);
@@ -159,18 +164,20 @@ import Footer from '../components/Footer.astro';
     }
   }
 
-  .therapist-avatar {
-    width: 200px;
-    height: 200px;
-    background-color: var(--color-surface);
-    border: 1px solid var(--color-border);
+  .therapist-photo {
+    width: 240px;
+    height: auto;
     border-radius: var(--radius-lg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-text-subtle);
-    font-size: var(--text-sm);
+    display: block;
     flex-shrink: 0;
+    object-fit: cover;
+  }
+
+  @media (max-width: 767px) {
+    .therapist-photo {
+      width: 100%;
+      max-width: 280px;
+    }
   }
 
   .therapist-intro {
@@ -390,7 +397,6 @@ import Footer from '../components/Footer.astro';
   }
 
   @media (max-width: 767px) {
-    .therapist-avatar { width: 100px; height: 100px; }
     .therapist-intro h1 { font-size: var(--text-2xl); }
     .therapist-tagline { font-size: var(--text-base); }
     .about-text p { font-size: var(--text-base); }
