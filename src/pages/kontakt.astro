@@ -41,7 +41,7 @@ import Footer from '../components/Footer.astro';
           <!-- Placeholder za buduće zakazivanje / Calendly -->
           <div class="booking-placeholder">
             <p class="booking-note">Ovde će biti widget za zakazivanje.</p>
-            <a href="mailto:[email]" class="btn btn-primary btn-lg">
+            <a href="mailto:psihoterapijasaMK@gmail.com" class="btn btn-primary btn-lg">
               Zakažite konsultaciju
             </a>
           </div>
@@ -59,19 +59,23 @@ import Footer from '../components/Footer.astro';
 
           <div class="info-block">
             <p class="info-label">Email</p>
-            <p class="info-value">[email]</p>
+            <p class="info-value">
+              <a href="mailto:psihoterapijasaMK@gmail.com" class="info-link">
+                psihoterapijasaMK@gmail.com
+              </a>
+            </p>
           </div>
 
           <div class="info-block">
             <p class="info-label">Telefon</p>
             <p class="info-value">[telefon]</p>
-            <p class="info-sub">Dostupni Pon–Pet, 09:00–20:00</p>
+            <p class="info-sub">Pon–Pet, 09:00–20:00</p>
           </div>
 
           <div class="info-block">
-            <p class="info-label">Lokacija (uživo)</p>
-            <p class="info-value">[Adresa], Beograd</p>
-            <p class="info-sub">Dostupan i online via video poziv</p>
+            <p class="info-label">Lokacija</p>
+            <p class="info-value">Beograd · online</p>
+            <p class="info-sub">srpski, engleski, nemački</p>
           </div>
 
           <div class="info-block">
@@ -294,6 +298,17 @@ import Footer from '../components/Footer.astro';
     line-height: var(--leading-loose);
     margin-top: var(--space-1);
     max-width: none;
+  }
+
+  .info-link {
+    color: var(--color-accent);
+    text-decoration: none;
+    word-break: break-all;
+    transition: color var(--duration-fast) var(--ease-out);
+  }
+
+  .info-link:hover {
+    color: var(--color-accent-hover);
   }
 
   /* ── FAQ ──────────────────────────────────────────────────────────────── */

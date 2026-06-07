@@ -21,7 +21,8 @@
 
     <div class="footer-contact">
       <p class="footer-heading">Kontakt</p>
-      <p>[email]</p>
+      <p class="footer-name">Marija Krstić</p>
+      <p><a href="mailto:psihoterapijasaMK@gmail.com" class="footer-email">psihoterapijasaMK@gmail.com</a></p>
       <p>[telefon]</p>
       <p class="footer-hours">Pon – Pet, 09:00 – 20:00</p>
     </div>
@@ -99,6 +100,21 @@
     color: var(--color-text-muted);
     max-width: none;
     line-height: var(--leading-loose);
+  }
+
+  .footer-name {
+    font-weight: 500;
+    color: var(--color-text) !important;
+  }
+
+  .footer-email {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: color var(--duration-fast) var(--ease-out);
+  }
+
+  .footer-email:hover {
+    color: var(--color-accent);
   }
 
   .footer-hours {

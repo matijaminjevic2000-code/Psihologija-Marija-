@@ -5,8 +5,8 @@ import Footer from '../components/Footer.astro';
 ---
 
 <BaseLayout
-  title="O nama — Forma Uma"
-  description="Upoznajte terapeuta i saznajte više o obrazovanju, pravcima i vrednostima koje vode rad u praksi Forma Uma."
+  title="Marija Krstić — REBT psihoterapeut u edukaciji | Forma Uma"
+  description="Marija Krstić, REBT psihoterapeut u edukaciji. Psihoterapija u Beogradu i online, na srpskom, engleskom i nemačkom jeziku."
 >
 
   <Nav />
@@ -21,11 +21,9 @@ import Footer from '../components/Footer.astro';
         </div>
         <div class="therapist-intro">
           <p class="eyebrow">O nama</p>
-          <h1>[Ime Prezime]</h1>
-          <p class="therapist-tagline">
-            Psihoterapeut koji veruje da svaki čovek nosi u sebi kapacitet
-            za promenu — ponekad mu je samo potrebna prava podrška.
-          </p>
+          <h1>Marija Krstić</h1>
+          <p class="therapist-title">REBT psihoterapeut u edukaciji</p>
+          <p class="therapist-meta">Beograd · online · srpski, engleski, nemački</p>
         </div>
       </div>
     </section>
@@ -37,19 +35,7 @@ import Footer from '../components/Footer.astro';
           <p class="eyebrow">O meni</p>
         </div>
         <div class="about-text">
-          <p>
-            [Placeholder bio — nekoliko rečenica o terapeutu. Ko sam, odakle dolazim,
-            šta me je dovelo do psihoterapije. Ovde ide lični, autentičan tekst koji
-            opisuje put i motivaciju, bez stručnog žargona.]
-          </p>
-          <p>
-            [Nastavak bija — npr. o pristupu radu, vrednostima u terapijskom odnosu,
-            šta je najvažnije u radu sa klijentima. Može biti dve do tri pasuse ukupno.]
-          </p>
-          <p>
-            [Treći pasus — opciono. Nešto lično: šta radim van terapije, zašto mi je
-            stalo do ovog posla, šta me inspiriše u radu.]
-          </p>
+          <p>[Marija — ovde ide tvoj lični tekst o sebi i pristupu radu]</p>
         </div>
       </div>
     </section>
@@ -59,33 +45,32 @@ import Footer from '../components/Footer.astro';
       <div class="container">
         <div class="section-header">
           <p class="eyebrow">Stručnost</p>
-          <h2>Obrazovanje i pravci</h2>
+          <h2>Obrazovanje i edukacija</h2>
         </div>
 
         <div class="education-grid">
 
           <div class="education-col">
-            <h3>Obrazovanje</h3>
+            <h3>Obrazovanje i edukacija</h3>
             <ul class="edu-list">
               <li>
-                <span class="edu-year">[god.]</span>
+                <span class="dir-dot"></span>
                 <div>
-                  <strong>[Naziv diplome / zvanje]</strong>
-                  <p>[Fakultet / institucija], [grad]</p>
+                  <strong>Filozofski fakultet</strong>
+                  <p>Univerzitet u Beogradu</p>
                 </div>
               </li>
               <li>
-                <span class="edu-year">[god.]</span>
+                <span class="dir-dot"></span>
                 <div>
-                  <strong>[Naziv edukacije / specijalizacije]</strong>
-                  <p>[Institucija], [trajanje]</p>
+                  <strong>Akreditovana REBT edukacija</strong>
                 </div>
               </li>
               <li>
-                <span class="edu-year">[god.]</span>
+                <span class="dir-dot"></span>
                 <div>
-                  <strong>[Dodatna edukacija ili sertifikat]</strong>
-                  <p>[Institucija]</p>
+                  <strong>REBT psihoterapeut u edukaciji</strong>
+                  <p>Zvanje u toku akreditovane edukacije</p>
                 </div>
               </li>
             </ul>
@@ -97,22 +82,15 @@ import Footer from '../components/Footer.astro';
               <li>
                 <span class="dir-dot"></span>
                 <div>
-                  <strong>[Naziv pravca, npr. REBT]</strong>
-                  <p>[Kratko objašnjenje — jedna rečenica o pristupu i za koga odgovara.]</p>
+                  <strong>[Marija — ovde ide naziv pravca]</strong>
+                  <p>[Kratko objašnjenje]</p>
                 </div>
               </li>
               <li>
                 <span class="dir-dot"></span>
                 <div>
-                  <strong>[Drugi pravac, npr. psihodinamski]</strong>
-                  <p>[Kratko objašnjenje.]</p>
-                </div>
-              </li>
-              <li>
-                <span class="dir-dot"></span>
-                <div>
-                  <strong>[Treći pravac ili metoda]</strong>
-                  <p>[Kratko objašnjenje.]</p>
+                  <strong>[Drugi pravac]</strong>
+                  <p>[Kratko objašnjenje]</p>
                 </div>
               </li>
             </ul>
@@ -126,12 +104,9 @@ import Footer from '../components/Footer.astro';
     <section class="quote-strip">
       <div class="container quote-inner">
         <blockquote>
-          <p>
-            „[Placeholder citat terapeuta — jedna do dve rečenice koje odražavaju
-            filozofiju rada ili ono u šta duboko veruje.]"
-          </p>
+          <p>„[Marija — ni ne znaš da imaš problem]"</p>
           <footer>
-            <cite>— [Ime Prezime], psihoterapeut</cite>
+            <cite>— Marija Krstić, REBT psihoterapeut u edukaciji</cite>
           </footer>
         </blockquote>
       </div>
@@ -210,11 +185,18 @@ import Footer from '../components/Footer.astro';
     letter-spacing: -0.02em;
   }
 
-  .therapist-tagline {
+  .therapist-title {
     font-size: var(--text-lg);
+    font-weight: 500;
+    color: var(--color-text);
+    max-width: none;
+  }
+
+  .therapist-meta {
+    font-size: var(--text-sm);
     color: var(--color-text-muted);
-    line-height: var(--leading-normal);
-    max-width: 52ch;
+    letter-spacing: 0.02em;
+    max-width: none;
   }
 
   /* ── About ────────────────────────────────────────────────────────────── */
@@ -296,17 +278,9 @@ import Footer from '../components/Footer.astro';
   }
 
   .edu-list li {
-    display: grid;
-    grid-template-columns: 52px 1fr;
+    display: flex;
     gap: var(--space-4);
-    align-items: start;
-  }
-
-  .edu-year {
-    font-size: var(--text-xs);
-    color: var(--color-text-subtle);
-    font-weight: 500;
-    padding-top: 3px;
+    align-items: flex-start;
   }
 
   .edu-list strong {
@@ -422,7 +396,7 @@ import Footer from '../components/Footer.astro';
     .about-text p { font-size: var(--text-base); }
     .section-header { margin-bottom: var(--space-8); }
     .section-header h2 { font-size: var(--text-2xl); }
-    .edu-list li { grid-template-columns: 44px 1fr; }
+    .edu-list li { gap: var(--space-3); }
     .cta-inner h2 { font-size: var(--text-2xl); }
     .cta-inner .btn { width: 100%; max-width: 320px; justify-content: center; }
   }
