@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import BookingForm from '../components/BookingForm.astro';
 ---
 
 <BaseLayout
@@ -34,23 +35,12 @@ import Footer from '../components/Footer.astro';
         <div class="contact-main">
           <h2>Zakažite konsultaciju</h2>
           <p>
-            Kliknite dugme ispod da odete na stranicu za zakazivanje. Možete izabrati
-            termin koji vam odgovara — uživo u Beogradu ili putem video poziva.
+            Popunite formu i javićemo Vam se u roku od jednog radnog dana kako bismo
+            dogovorili termin koji Vam odgovara — uživo u Beogradu ili putem video poziva.
           </p>
 
-          <!-- Placeholder za buduće zakazivanje / Calendly -->
-          <div class="booking-placeholder">
-            <p class="booking-note">Ovde će biti widget za zakazivanje.</p>
-            <a href="mailto:psihoterapijasaMK@gmail.com" class="btn btn-primary btn-lg">
-              Zakažite konsultaciju
-            </a>
-          </div>
-
-          <div class="contact-note">
-            <p>
-              Ako imate pitanje pre nego što se odlučite, slobodno napišite mejl
-              ili pozovite — odgovaramo u roku od jednog radnog dana.
-            </p>
+          <div class="booking-embed">
+            <BookingForm formId="bookingFormEmbed" />
           </div>
         </div>
 
@@ -218,42 +208,13 @@ import Footer from '../components/Footer.astro';
     margin-bottom: var(--space-8);
   }
 
-  .booking-placeholder {
-    background-color: var(--color-surface);
-    border: 1px dashed var(--color-border);
-    border-radius: var(--radius-lg);
-    padding: var(--space-12) var(--space-10);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-6);
-    text-align: center;
-    margin-bottom: var(--space-8);
-  }
-
-  .booking-note {
-    font-size: var(--text-sm);
-    color: var(--color-text-subtle);
-    max-width: none;
+  .booking-embed {
+    margin-top: var(--space-2);
   }
 
   .btn-lg {
     padding: var(--space-4) var(--space-8);
     font-size: var(--text-sm);
-  }
-
-  .contact-note {
-    padding: var(--space-5) var(--space-6);
-    background-color: var(--color-accent-light);
-    border-radius: var(--radius-md);
-    border-left: 3px solid var(--color-accent);
-  }
-
-  .contact-note p {
-    font-size: var(--text-sm);
-    color: var(--color-text-muted);
-    line-height: var(--leading-loose);
-    max-width: none;
   }
 
   /* ── Contact Info ─────────────────────────────────────────────────────── */
@@ -372,8 +333,6 @@ import Footer from '../components/Footer.astro';
     .page-hero-sub { font-size: var(--text-base); }
     .contact-main h2 { font-size: var(--text-xl); }
     .contact-info { position: static; }
-    .booking-placeholder { padding: var(--space-8) var(--space-6); }
-    .booking-placeholder .btn { width: 100%; justify-content: center; }
     .section-header { margin-bottom: var(--space-8); }
     .section-header h2 { font-size: var(--text-2xl); }
     .faq-item dd { max-width: 100%; }

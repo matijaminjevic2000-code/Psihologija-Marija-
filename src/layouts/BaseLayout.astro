@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import BookingModal from '../components/BookingModal.astro';
 
 interface Props {
   title: string;
@@ -31,5 +32,6 @@ const {
   <body>
     <a href="#main-content" class="skip-link">Preskoči na sadržaj</a>
     <slot />
+    <BookingModal />
   </body>
 </html>
