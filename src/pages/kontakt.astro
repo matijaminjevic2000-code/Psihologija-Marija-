@@ -82,54 +82,6 @@ import BookingForm from '../components/BookingForm.astro';
       </div>
     </section>
 
-    <!-- ═══ FAQ ═══════════════════════════════════════════════════════════ -->
-    <section class="faq">
-      <div class="container">
-        <div class="section-header">
-          <p class="eyebrow">Pitanja</p>
-          <h2>Često postavljana pitanja</h2>
-        </div>
-
-        <dl class="faq-list">
-
-          <div class="faq-item">
-            <dt>Šta se dešava na prvom susretu?</dt>
-            <dd>
-              Prvi susret je razgovor, ne procena. Pričate o tome šta vas dovodi,
-              šta ste dosad probali, i šta biste hteli da bude drugačije. Nema
-              testova ni formulara.
-            </dd>
-          </div>
-
-          <div class="faq-item">
-            <dt>Koliko traju seanse i koliko često se odvijaju?</dt>
-            <dd>
-              Standardna seansa traje pedeset minuta. Najčešće se sreće jednom
-              nedeljno, ali tempo prilagođavamo vašim potrebama i rasporedu.
-            </dd>
-          </div>
-
-          <div class="faq-item">
-            <dt>Je li online terapija jednako efikasna?</dt>
-            <dd>
-              Za većinu tema sa kojima radimo — da. Online format omogućava isti
-              kvalitet razgovora, a mnogim klijentima je praktičniji. Neke teme
-              ili preference mogu da zahtevaju rad uživo.
-            </dd>
-          </div>
-
-          <div class="faq-item">
-            <dt>Šta ako se ne odlučim posle besplatne konsultacije?</dt>
-            <dd>
-              Nema nikakve obaveze. Cilj konsultacije je da dobijete informacije
-              i osećaj — ne da se odmah odlučite.
-            </dd>
-          </div>
-
-        </dl>
-      </div>
-    </section>
-
   </main>
 
   <Footer />
@@ -272,69 +224,10 @@ import BookingForm from '../components/BookingForm.astro';
     color: var(--color-accent-hover);
   }
 
-  /* ── FAQ ──────────────────────────────────────────────────────────────── */
-  .faq {
-    padding-block: var(--space-24);
-  }
-
-  .section-header {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-3);
-    margin-bottom: var(--space-12);
-  }
-
-  .section-header h2 {
-    font-size: var(--text-3xl);
-    font-weight: 600;
-  }
-
-  .faq-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    max-width: var(--container-md);
-    border-top: 1px solid var(--color-border);
-  }
-
-  .faq-item {
-    padding-block: var(--space-8);
-    border-bottom: 1px solid var(--color-border);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-8);
-    align-items: start;
-  }
-
-  @media (max-width: 767px) {
-    .faq-item {
-      grid-template-columns: 1fr;
-      gap: var(--space-3);
-    }
-  }
-
-  .faq-item dt {
-    font-family: var(--font-display);
-    font-size: var(--text-lg);
-    font-weight: 600;
-    line-height: var(--leading-snug);
-    color: var(--color-text);
-  }
-
-  .faq-item dd {
-    font-size: var(--text-base);
-    color: var(--color-text-muted);
-    line-height: var(--leading-loose);
-    max-width: 52ch;
-  }
-
   @media (max-width: 767px) {
     .page-hero h1 { font-size: var(--text-2xl); }
     .page-hero-sub { font-size: var(--text-base); }
     .contact-main h2 { font-size: var(--text-xl); }
     .contact-info { position: static; }
-    .section-header { margin-bottom: var(--space-8); }
-    .section-header h2 { font-size: var(--text-2xl); }
-    .faq-item dd { max-width: 100%; }
   }
 </style>
