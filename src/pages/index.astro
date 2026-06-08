@@ -143,6 +143,10 @@ import Footer from '../components/Footer.astro';
 
         </div>
 
+        <div class="blog-footer">
+          <a href="/teme" class="blog-all-link">Sve teme →</a>
+        </div>
+
       </div>
     </section>
 
@@ -370,6 +374,24 @@ import Footer from '../components/Footer.astro';
   }
 
   .blog-link:hover {
+    color: var(--color-accent-hover);
+  }
+
+  .blog-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: var(--space-8);
+  }
+
+  .blog-all-link {
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color var(--duration-fast) var(--ease-out);
+  }
+
+  .blog-all-link:hover {
     color: var(--color-accent-hover);
   }
 

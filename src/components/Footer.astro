@@ -15,6 +15,7 @@
         <li><a href="/pristup">Pristup</a></li>
         <li><a href="/teme">Teme</a></li>
         <li><a href="/o-nama">O nama</a></li>
+        <li><a href="/cesta-pitanja">Česta pitanja</a></li>
         <li><a href="/kontakt">Kontakt</a></li>
       </ul>
     </nav>
@@ -30,6 +31,7 @@
   </div>
   <div class="container footer-bottom">
     <p>© 2025 Forma Uma. Sva prava zadržana.</p>
+    <a href="/politika-privatnosti" class="footer-privacy">Politika privatnosti</a>
   </div>
 </footer>
 
@@ -123,9 +125,28 @@
     margin-top: var(--space-2);
   }
 
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+  }
+
   .footer-bottom p {
     font-size: var(--text-xs);
     color: var(--color-text-subtle);
     max-width: none;
+  }
+
+  .footer-privacy {
+    font-size: var(--text-xs);
+    color: var(--color-text-subtle);
+    text-decoration: none;
+    transition: color var(--duration-fast) var(--ease-out);
+  }
+
+  .footer-privacy:hover {
+    color: var(--color-accent);
   }
 </style>
