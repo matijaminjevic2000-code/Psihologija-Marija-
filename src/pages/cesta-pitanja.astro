@@ -2,12 +2,123 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Da li je prva konsultacija besplatna i koliko traje?",
+      acceptedAnswer: { "@type": "Answer", text: "Da, prva konsultacija je besplatna i služi za upoznavanje. Ja se upoznajem sa vama i onim što vas dovodi, a vi sa mnom i mojim načinom rada. Prosečno traje 30–45 minuta." }
+    },
+    {
+      "@type": "Question",
+      name: "Šta se dešava na prvoj konsultaciji?",
+      acceptedAnswer: { "@type": "Answer", text: "Konsultacija nije terapijska seansa, već prilika da se pre rada upoznamo. Stičemo utisak jedno o drugom i zajedno procenjujemo da li su moj pravac i način rada pravi izbor za vas. Meni daje priliku da se pripremim za prvu seansu, kako ne bismo gubili vreme. Na samom problemu još ne radimo — to počinje od prve seanse." }
+    },
+    {
+      "@type": "Question",
+      name: "Kako se zakazuje termin?",
+      acceptedAnswer: { "@type": "Answer", text: "Termin možete zakazati putem email adrese, kontakt forme na sajtu ili poruke na broj telefona. Na pozive ne odgovaram pre dogovorenog termina." }
+    },
+    {
+      "@type": "Question",
+      name: "Treba li nešto da pripremim pre prvog susreta?",
+      acceptedAnswer: { "@type": "Answer", text: "Nije potrebna nikakva posebna priprema — dovoljno je da imate problem ili temu koju želite da rešite. Sve ostalo prolazimo zajedno tokom konsultacije." }
+    },
+    {
+      "@type": "Question",
+      name: "Koliko traje jedna seansa?",
+      acceptedAnswer: { "@type": "Answer", text: "Prosečno između 55 i 70 minuta." }
+    },
+    {
+      "@type": "Question",
+      name: "Koliko često se dolazi na terapiju?",
+      acceptedAnswer: { "@type": "Answer", text: "Najčešće jednom nedeljno, mada se tempo prilagođava od slučaja do slučaja." }
+    },
+    {
+      "@type": "Question",
+      name: "Kolika je cena seanse?",
+      acceptedAnswer: { "@type": "Answer", text: "Cenu dogovaramo na konsultaciji i u skladu je sa uobičajenim cenama za psihoterapijski rad." }
+    },
+    {
+      "@type": "Question",
+      name: "Koji su načini plaćanja?",
+      acceptedAnswer: { "@type": "Answer", text: "Plaćanje je moguće gotovinom, karticom ili kriptovalutama." }
+    },
+    {
+      "@type": "Question",
+      name: "Šta ako moram da otkažem termin?",
+      acceptedAnswer: { "@type": "Answer", text: "Uvek se trudim da imam razumevanja za otkazane termine. Molim vas da otkazivanje najavite na vreme kad god je to moguće." }
+    },
+    {
+      "@type": "Question",
+      name: "Da li radite uživo ili online?",
+      acceptedAnswer: { "@type": "Answer", text: "Radim i uživo i online. Oba oblika su efikasna; u praksi se pokazalo da mnogi ljudi nešto lakše reaguju na rad uživo, ali online je potpuno ravnopravan izbor kada vam tako više odgovara." }
+    },
+    {
+      "@type": "Question",
+      name: "Kako izgleda online seansa?",
+      acceptedAnswer: { "@type": "Answer", text: "Online seanse održavam preko Microsoft Teams-a, Google Meet-a ili WhatsApp video poziva — kako vam je najlakše." }
+    },
+    {
+      "@type": "Question",
+      name: "Na kojim jezicima se može raditi?",
+      acceptedAnswer: { "@type": "Answer", text: "Terapiju vodim tečno na srpskom i engleskom jeziku. Mogu i na nemačkom, uz povremenu pomoć engleskog." }
+    },
+    {
+      "@type": "Question",
+      name: "Sa kim radite?",
+      acceptedAnswer: { "@type": "Answer", text: "Trenutno radim individualno, sa punoletnim osobama. Parove i osobe mlađe od 18 godina ne primam, osim u posebnim okolnostima." }
+    },
+    {
+      "@type": "Question",
+      name: "Sa kojim temama se ljudi najčešće javljaju?",
+      acceptedAnswer: { "@type": "Answer", text: "Najčešće radimo na: anksioznosti, stresu, osećaju niže vrednosti i manjku samopouzdanja, problemima na poslu i sa autoritetom, problemima u partnerskim odnosima, agresiji, fobijama i strahovima, te opsesivno-kompulsivnom poremećaju (OKP)." }
+    },
+    {
+      "@type": "Question",
+      name: "Šta je REBT?",
+      acceptedAnswer: { "@type": "Answer", text: "REBT (Racionalno-emotivno-bihejvioralna terapija) praktičan je pravac u psihoterapiji koji vas uči da način na koji tumačite događaje — a ne sami događaji — oblikuje vaše emocije. Cilj je prepoznati iracionalna uverenja i zameniti ih racionalnim, radi trajnije emocionalne stabilnosti. Fokus na sadašnjosti: iako se uzimaju u obzir iskustva iz prošlosti, REBT je najviše usmeren na rešavanje vaših trenutnih problema. Preuzimanje odgovornosti: radi se na onome na šta realno možete da utičete — sopstvenim mislima, reakcijama i ponašanju. Akcija i zadaci: zajedno radimo na vežbama koje primenjujete između seansi." }
+    },
+    {
+      "@type": "Question",
+      name: "Koliko dugo traje terapija?",
+      acceptedAnswer: { "@type": "Answer", text: "Trajanje je individualno i zavisi od toga sa čime se radi i od vaših ciljeva. Neki ljudi osete pomak već nakon nekoliko nedelja ili meseci, dok je nekima potrebno duže. Tempo i trajanje procenjujemo zajedno tokom rada." }
+    },
+    {
+      "@type": "Question",
+      name: "Da li je online terapija jednako efikasna kao uživo?",
+      acceptedAnswer: { "@type": "Answer", text: "Online psihoterapija je efikasan oblik rada. U mom iskustvu, neki ljudi se nešto lakše opuste uživo, ali mnogi odlično napreduju i online — birate ono što vama prija." }
+    },
+    {
+      "@type": "Question",
+      name: "Nisam siguran/na da li mi uopšte treba terapija.",
+      acceptedAnswer: { "@type": "Answer", text: "Sasvim je u redu ne biti siguran. Upravo zato postoji besplatna konsultacija — bez obaveze, da zajedno vidimo da li bi vam rad pomogao. Ako zaključimo da nije pravi trenutak ili pravi pristup za vas, i to je sasvim u redu." }
+    },
+    {
+      "@type": "Question",
+      name: "Da li je sve poverljivo?",
+      acceptedAnswer: { "@type": "Answer", text: "Sve o čemu razgovaramo ostaje između nas. Psihoterapija je sigurno mesto gde možete reći šta stvarno mislite i osećate, bez straha od osude." }
+    },
+    {
+      "@type": "Question",
+      name: "Da li psihoterapeut prepisuje lekove?",
+      acceptedAnswer: { "@type": "Answer", text: "Psihoterapeut ne prepisuje lekove — to je u nadležnosti psihijatra. U terapiji na promeni radimo kroz razgovor i rad na mislima i ponašanju. U mnogim slučajevima napredak je moguć i bez lekova; kada je psihijatrijska podrška potrebna, može se sprovoditi paralelno." }
+    }
+  ]
+};
 ---
 
 <BaseLayout
   title="Česta pitanja o psihoterapiji — Forma Uma"
   description="Odgovori na najčešća pitanja o psihoterapijskim sesijama, prvoj konsultaciji, online radu i načinu zakazivanja u praksi Forma Uma."
 >
+
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  </Fragment>
 
   <Nav />
 
@@ -29,77 +140,225 @@ import Footer from '../components/Footer.astro';
     <section class="faq">
       <div class="container">
 
-        <dl class="faq-list">
+        <!-- Konsultacija i zakazivanje -->
+        <div class="faq-group">
+          <h2 class="faq-group-heading">Konsultacija i zakazivanje</h2>
+          <dl class="faq-list">
 
-          <div class="faq-item">
-            <dt>Šta se dešava na prvom susretu?</dt>
-            <dd>
-              Prvi susret je razgovor, ne procena. Pričate o tome šta vas dovodi,
-              šta ste dosad probali, i šta biste hteli da bude drugačije. Nema
-              testova ni formulara.
-            </dd>
-          </div>
+            <div class="faq-item">
+              <dt>Da li je prva konsultacija besplatna i koliko traje?</dt>
+              <dd>
+                Da, prva konsultacija je besplatna i služi za upoznavanje.
+                Ja se upoznajem sa vama i onim što vas dovodi, a vi sa mnom i mojim
+                načinom rada. Prosečno traje 30–45 minuta.
+              </dd>
+            </div>
 
-          <div class="faq-item">
-            <dt>Koliko traju seanse i koliko često se odvijaju?</dt>
-            <dd>
-              Standardna seansa traje pedeset minuta. Najčešće se sreće jednom
-              nedeljno, ali tempo prilagođavamo vašim potrebama i rasporedu.
-            </dd>
-          </div>
+            <div class="faq-item">
+              <dt>Šta se dešava na prvoj konsultaciji?</dt>
+              <dd>
+                Konsultacija nije terapijska seansa, već prilika da se pre rada
+                upoznamo. Stičemo utisak jedno o drugom i zajedno procenjujemo da li
+                su moj pravac i način rada pravi izbor za vas. Meni daje priliku da
+                se pripremim za prvu seansu, kako ne bismo gubili vreme. Na samom
+                problemu još ne radimo — to počinje od prve seanse.
+              </dd>
+            </div>
 
-          <div class="faq-item">
-            <dt>Je li online terapija jednako efikasna?</dt>
-            <dd>
-              Za većinu tema sa kojima radimo — da. Online format omogućava isti
-              kvalitet razgovora, a mnogim klijentima je praktičniji. Neke teme
-              ili preference mogu da zahtevaju rad uživo.
-            </dd>
-          </div>
+            <div class="faq-item">
+              <dt>Kako se zakazuje termin?</dt>
+              <dd>
+                Termin možete zakazati putem email adrese, kontakt forme na sajtu
+                ili poruke na broj telefona. Na pozive ne odgovaram pre dogovorenog
+                termina.
+              </dd>
+            </div>
 
-          <div class="faq-item">
-            <dt>Šta ako se ne odlučim posle besplatne konsultacije?</dt>
-            <dd>
-              Nema nikakve obaveze. Cilj konsultacije je da dobijete informacije
-              i osećaj — ne da se odmah odlučite.
-            </dd>
-          </div>
+            <div class="faq-item">
+              <dt>Treba li nešto da pripremim pre prvog susreta?</dt>
+              <dd>
+                Nije potrebna nikakva posebna priprema — dovoljno je da imate problem
+                ili temu koju želite da rešite. Sve ostalo prolazimo zajedno tokom
+                konsultacije.
+              </dd>
+            </div>
 
-          <div class="faq-item">
-            <dt>Koliko košta seansa?</dt>
-            <dd>
-              Prva konsultacija je besplatna. Cena redovnih seansi dostupna je
-              na upit — moguće je prilagođavanje u posebnim okolnostima.
-            </dd>
-          </div>
+          </dl>
+        </div>
 
-          <div class="faq-item">
-            <dt>Na kojim jezicima možete da radite?</dt>
-            <dd>
-              Seanse se mogu voditi na srpskom, engleskom i nemačkom jeziku.
-            </dd>
-          </div>
+        <!-- Seanse i cena -->
+        <div class="faq-group">
+          <h2 class="faq-group-heading">Seanse i cena</h2>
+          <dl class="faq-list">
 
-          <div class="faq-item">
-            <dt>Da li je moguće kombinovati online i uživo format?</dt>
-            <dd>
-              Da. Mnogi klijenti kombinuju oba formata u zavisnosti od nedelje
-              i životnih okolnosti. Zajedno dogovaramo šta vam u datom periodu
-              najviše odgovara.
-            </dd>
-          </div>
+            <div class="faq-item">
+              <dt>Koliko traje jedna seansa?</dt>
+              <dd>Prosečno između 55 i 70 minuta.</dd>
+            </div>
 
-          <div class="faq-item">
-            <dt>Kako da znam da li mi psihoterapija treba?</dt>
-            <dd>
-              Ako nešto što nosite utiče na vaš svakodnevni život, odnose ili
-              osećaj o sebi — to je dovoljno. Terapija nije rezervisana samo za
-              krize. Besplatna konsultacija postoji upravo za to: da zajedno
-              proverimo da li ima smisla da krenemo.
-            </dd>
-          </div>
+            <div class="faq-item">
+              <dt>Koliko često se dolazi na terapiju?</dt>
+              <dd>Najčešće jednom nedeljno, mada se tempo prilagođava od slučaja do slučaja.</dd>
+            </div>
 
-        </dl>
+            <div class="faq-item">
+              <dt>Kolika je cena seanse?</dt>
+              <dd>
+                Cenu dogovaramo na konsultaciji i u skladu je sa uobičajenim cenama
+                za psihoterapijski rad.
+              </dd>
+            </div>
+
+            <div class="faq-item">
+              <dt>Koji su načini plaćanja?</dt>
+              <dd>Plaćanje je moguće gotovinom, karticom ili kriptovalutama.</dd>
+            </div>
+
+            <div class="faq-item">
+              <dt>Šta ako moram da otkažem termin?</dt>
+              <dd>
+                Uvek se trudim da imam razumevanja za otkazane termine. Molim vas da
+                otkazivanje najavite na vreme kad god je to moguće.
+              </dd>
+            </div>
+
+          </dl>
+        </div>
+
+        <!-- Format i jezik rada -->
+        <div class="faq-group">
+          <h2 class="faq-group-heading">Format i jezik rada</h2>
+          <dl class="faq-list">
+
+            <div class="faq-item">
+              <dt>Da li radite uživo ili online?</dt>
+              <dd>
+                Radim i uživo i online. Oba oblika su efikasna; u praksi se pokazalo
+                da mnogi ljudi nešto lakše reaguju na rad uživo, ali online je potpuno
+                ravnopravan izbor kada vam tako više odgovara.
+              </dd>
+            </div>
+
+            <div class="faq-item">
+              <dt>Kako izgleda online seansa?</dt>
+              <dd>
+                Online seanse održavam preko Microsoft Teams-a, Google Meet-a ili
+                WhatsApp video poziva — kako vam je najlakše.
+              </dd>
+            </div>
+
+            <div class="faq-item">
+              <dt>Na kojim jezicima se može raditi?</dt>
+              <dd>
+                Terapiju vodim tečno na srpskom i engleskom jeziku. Mogu i na
+                nemačkom, uz povremenu pomoć engleskog.
+              </dd>
+            </div>
+
+            <div class="faq-item">
+              <dt>Sa kim radite?</dt>
+              <dd>
+                Trenutno radim individualno, sa punoletnim osobama. Parove i osobe
+                mlađe od 18 godina ne primam, osim u posebnim okolnostima.
+              </dd>
+            </div>
+
+          </dl>
+        </div>
+
+        <!-- O terapiji i pristupu -->
+        <div class="faq-group">
+          <h2 class="faq-group-heading">O terapiji i pristupu</h2>
+          <dl class="faq-list">
+
+            <div class="faq-item">
+              <dt>Sa kojim temama se ljudi najčešće javljaju?</dt>
+              <dd>
+                Najčešće radimo na: anksioznosti, stresu, osećaju niže vrednosti i
+                manjku samopouzdanja, problemima na poslu i sa autoritetom, problemima
+                u partnerskim odnosima, agresiji, fobijama i strahovima, te
+                opsesivno-kompulsivnom poremećaju (OKP).
+              </dd>
+            </div>
+
+            <div class="faq-item">
+              <dt>Šta je REBT?</dt>
+              <dd>
+                REBT (Racionalno-emotivno-bihejvioralna terapija) praktičan je
+                pravac u psihoterapiji koji vas uči da način na koji tumačite
+                događaje — a ne sami događaji — oblikuje vaše emocije. Cilj je
+                prepoznati iracionalna uverenja i zameniti ih racionalnim, radi
+                trajnije emocionalne stabilnosti.
+                <ul>
+                  <li>
+                    <strong>Fokus na sadašnjosti:</strong> iako se uzimaju u obzir
+                    iskustva iz prošlosti, REBT je najviše usmeren na rešavanje vaših
+                    trenutnih problema.
+                  </li>
+                  <li>
+                    <strong>Preuzimanje odgovornosti:</strong> radi se na onome na šta
+                    realno možete da utičete — sopstvenim mislima, reakcijama i
+                    ponašanju.
+                  </li>
+                  <li>
+                    <strong>Akcija i zadaci:</strong> zajedno radimo na vežbama koje
+                    primenjujete između seansi.
+                  </li>
+                </ul>
+              </dd>
+            </div>
+
+            <div class="faq-item">
+              <dt>Koliko dugo traje terapija?</dt>
+              <dd>
+                Trajanje je individualno i zavisi od toga sa čime se radi i od vaših
+                ciljeva. Neki ljudi osete pomak već nakon nekoliko nedelja ili meseci,
+                dok je nekima potrebno duže. Tempo i trajanje procenjujemo zajedno
+                tokom rada.
+              </dd>
+            </div>
+
+            <div class="faq-item">
+              <dt>Da li je online terapija jednako efikasna kao uživo?</dt>
+              <dd>
+                Online psihoterapija je efikasan oblik rada. U mom iskustvu, neki
+                ljudi se nešto lakše opuste uživo, ali mnogi odlično napreduju i
+                online — birate ono što vama prija.
+              </dd>
+            </div>
+
+            <div class="faq-item">
+              <dt>Nisam siguran/na da li mi uopšte treba terapija.</dt>
+              <dd>
+                Sasvim je u redu ne biti siguran. Upravo zato postoji besplatna
+                konsultacija — bez obaveze, da zajedno vidimo da li bi vam rad
+                pomogao. Ako zaključimo da nije pravi trenutak ili pravi pristup
+                za vas, i to je sasvim u redu.
+              </dd>
+            </div>
+
+            <div class="faq-item">
+              <dt>Da li je sve poverljivo?</dt>
+              <dd>
+                Sve o čemu razgovaramo ostaje između nas. Psihoterapija je sigurno
+                mesto gde možete reći šta stvarno mislite i osećate, bez straha
+                od osude.
+              </dd>
+            </div>
+
+            <div class="faq-item">
+              <dt>Da li psihoterapeut prepisuje lekove?</dt>
+              <dd>
+                Psihoterapeut ne prepisuje lekove — to je u nadležnosti psihijatra.
+                U terapiji na promeni radimo kroz razgovor i rad na mislima i
+                ponašanju. U mnogim slučajevima napredak je moguć i bez lekova;
+                kada je psihijatrijska podrška potrebna, može se sprovoditi
+                paralelno.
+              </dd>
+            </div>
+
+          </dl>
+        </div>
 
       </div>
     </section>
@@ -163,11 +422,29 @@ import Footer from '../components/Footer.astro';
     padding-block: var(--space-20);
   }
 
+  .faq-group {
+    max-width: var(--container-md);
+    margin-bottom: var(--space-16);
+  }
+
+  .faq-group:last-child {
+    margin-bottom: 0;
+  }
+
+  .faq-group-heading {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: var(--space-6);
+  }
+
   .faq-list {
     display: flex;
     flex-direction: column;
     gap: 0;
-    max-width: var(--container-md);
     border-top: 1px solid var(--color-border);
   }
 
@@ -200,6 +477,21 @@ import Footer from '../components/Footer.astro';
     color: var(--color-text-muted);
     line-height: var(--leading-loose);
     max-width: 52ch;
+  }
+
+  .faq-item dd ul {
+    list-style: disc;
+    padding-left: var(--space-5);
+    margin-top: var(--space-3);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .faq-item dd li {
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+    line-height: var(--leading-loose);
   }
 
   /* ── CTA strip ────────────────────────────────────────────────────────── */
