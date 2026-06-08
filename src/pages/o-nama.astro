@@ -45,7 +45,7 @@ import marijaPhoto from '../assets/marija-kristic.jpg';
 
   <Nav />
 
-  <main>
+  <main id="main-content">
 
     <!-- ═══ HERO ══════════════════════════════════════════════════════════ -->
     <section class="therapist-hero">
@@ -55,6 +55,8 @@ import marijaPhoto from '../assets/marija-kristic.jpg';
           alt="Marija Krstić, REBT psihoterapeut u edukaciji"
           width={240}
           class="therapist-photo"
+          loading="eager"
+          fetchpriority="high"
         />
         <div class="therapist-intro">
           <p class="eyebrow">O nama</p>
@@ -400,7 +402,7 @@ import marijaPhoto from '../assets/marija-kristic.jpg';
     font-family: var(--font-body);
     font-size: var(--text-sm);
     font-style: normal;
-    color: rgba(255, 255, 255, 0.65);
+    color: rgba(255, 255, 255, 0.80);
     letter-spacing: 0.03em;
   }
 
